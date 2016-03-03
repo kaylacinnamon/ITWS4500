@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twitterAPI">
+  <head>
+    <title>Web Science Systems Development Lab 4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="tweets.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" media="(max-width: 800px)" href="tweets.css" />
+  </head>
+  <body>
+    <div ng-controller="firstController">
+      <div class="col-md-4 col-lg-4 col-centered">
+        <h1>Tweets <i class="fa fa-twitter"></i></h1>
+        <div class="tweets">
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <!--adds the search bar-->
+              <div class="input-group">
+                <input type="text" class="form-control" ng-model="search" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button" ng-click="searchFunction()">Submit</button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <!--repeats this for every tweet-->
+          <div class="well" ng-repeat="i in tweets">
+            <h2 class="user">
+              <!--adds username and profile photo-->
+              <img ng-src="{{i.user.profile_image_url}}" class="img-circle" alt="" />
+              {{i.user.screen_name}}
+            </h2>
+            <p class="body">{{i.text}}</p>
+            <!--adds retweet and favorite statistics-->
+            <div class="col-sm-4 col-md-6 actions"><i class="fa fa-retweet"></i> {{i.retweet_count}}&nbsp;&nbsp;&nbsp;<i class="fa fa-heart"></i> {{i.favorite_count}}</div>
+            <!--use custom parse function to split up the date/time to only show the date-->
+            <div class="col-sm-4 col-md-6 date"><span class="pull-right">{{mySplit(i.created_at,1)}}. {{mySplit(i.created_at,2)}}, {{mySplit(i.created_at,5)}}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="tweets.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  </body>
+</html>

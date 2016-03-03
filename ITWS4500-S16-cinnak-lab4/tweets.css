@@ -1,0 +1,84 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #7D1935;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.body {
+  font-size: 1.5em;
+}
+
+.actions {
+  font-size: 1em;
+  margin-left: -12px;
+  display: inline-block;
+}
+
+.date {
+  font-size: 1em;
+  height: 10px;
+  display: inline-block;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.user {
+  margin-top: -10px;
+}
+
+.well {
+  padding-bottom: 35px;
+}
+
+.fa-twitter {
+  color: #4099FF;
+}
+
+.fa-heart {
+  color: #B20000;
+}
+
+.fa-retweet {
+  color: #5ADF5A;
+}
+
+.input-group {
+  float: right;
+}
+
+/*used 992px because that's what medium devices are according to Bootstrap*/
+@media (max-width: 992px) {
+  
+  body {
+  	font-size: 1em;
+  }
+
+  img {
+  	width: 40px;
+  	height: 40px;
+  }
+
+  h2 {
+  	font-size: 2.25em;
+  }
+
+  .date {
+  	float: right;
+  }
+
+  .well {
+  	padding-bottom: 25px;
+  }
+}
