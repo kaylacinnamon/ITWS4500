@@ -1,0 +1,11 @@
+{
+  "name": "twitter",
+  "version": "0.0.1",
+  "description": "Lab 5 for Web Science Systems Development.",
+  "dependencies": {
+    "express": "^4.13.4",
+    "twitter": "1.2.5"
+  },
+  "license": "UNLICENSED",
+  "repository": "None"
+}
