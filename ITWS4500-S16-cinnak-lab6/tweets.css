@@ -1,0 +1,144 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #7D1935;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  color: white;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-left: 10px;
+}
+
+.info {
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  font-size: 1.5em;
+}
+
+.body {
+  font-size: 1.5em;
+}
+
+.actions {
+  font-size: 1em;
+  margin-left: -12px;
+  margin-top: 10px;
+  float: left;
+  width: 100%;
+}
+
+.date {
+  font-size: 1em;
+  margin-left: 50%;
+  
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.user {
+  margin-top: -10px;
+}
+
+.well {
+  padding-bottom: 35px;
+}
+
+.fa-twitter {
+  color: #4099FF;
+}
+
+.fa-heart {
+  color: #B20000;
+}
+
+.fa-retweet {
+  color: #5ADF5A;
+}
+
+.col-lg-6 {
+  float: none;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+#sel1 {
+  width: 70px;
+}
+
+.input-group {
+  float: none;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.buttons {
+  display: inline-block;
+  
+}
+
+.only-button {
+  float: none;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#loading {
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 150px;
+  float: none;
+}
+
+/*used 992px because that's what medium devices are according to Bootstrap*/
+@media (max-width: 992px) {
+  
+  body {
+    font-size: 1em;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  h2 {
+    font-size: 2.25em;
+  }
+
+  .date {
+    float: right;
+  }
+
+  .well {
+    padding-bottom: 25px;
+  }
+
+  #sel1 {
+    width: 70px;
+  }
+
+  #searchBar {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
+  .input-group {
+    float: none;
+    margin: 0 auto;
+  }
+}
