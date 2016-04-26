@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sparql">
+  <head>
+    <title>Web Science Systems Development Lab 8</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="sparql.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" media="(max-width: 800px)" href="sparql.css" />
+  </head>
+  <body>
+    <div ng-controller="firstController">
+      <div class="col-md-4 col-lg-4 col-centered">
+        <h1>SPARQL<i class="fa fa-star" aria-hidden="true"></i></h1>
+          <div class="row">
+            <!-- instructions for the user -->
+            <p class="info">Edit the SPARQL query in the text box for what you want to search for. The default query will find ten movies with their producer(s) and director(s).</p>
+            <p class="info">If your query results don't seem to load, check the console for an error.</p>
+            <div class="col-lg-6 col-centered">
+              <!-- adds the query textarea and search button -->
+              <div class="form-group">
+                <span class="buttons">
+                  <textarea type="text" class="form-control" ng-model="search" id="searchBar" rows="6"></textarea>
+                  <div class="only-button">
+                    <button class="btn btn-info" id="submitButton" type="button" ng-click="searchFunction()">Search</button>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <!--loading gif for when the query is being run-->
+            <img id="loading" style="display: none;" class="img-responsive" src="loading.gif" alt="Loading...">
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <!-- prints the headers -->
+                <th ng-repeat="field in headers">{{field}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- prints the query results -->
+              <tr ng-repeat="row in array.slice(1, array.length)">
+                <td ng-repeat="field in headers">{{row[field].value}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="sparql.js"></script>
+  </body>
+</html>
